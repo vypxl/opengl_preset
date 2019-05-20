@@ -7,7 +7,7 @@
 FtFont::FtFont(std::string fontFilename, int size, int window_width, int window_height) {
     this->size = size;
     // Load shader
-    shader.loadFromFile("shaders/text.vert", "shaders/text.frag");
+    shader.loadFromFile("shaders/text.vert", "", "shaders/text.frag");
     attr_pos = glGetAttribLocation(shader.getNativeHandle(), "pos_uv");
     setWindow(window_width, window_height);
 

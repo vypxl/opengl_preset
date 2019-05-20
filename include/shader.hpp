@@ -11,6 +11,7 @@
 class Shader {
 private:
     GLuint vert;
+    GLuint geom;
     GLuint frag;
     GLuint prog;
 
@@ -19,7 +20,7 @@ private:
 public:
     ~Shader();
 
-    int loadFromFile(const std::string &vertexShaderFilename, const std::string &fragmenShaderFileName);
+    int loadFromFile(const std::string &vertexShaderFilename, const std::string &geometryShaderFilename, const std::string &fragmenShaderFilename);
     void bind();
     void unbind();
     void setUniform(const std::string &name, float x);

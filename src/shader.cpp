@@ -45,22 +45,28 @@ int Shader::compileShader(GLuint id, const std::string &src) {
     return result;
 }
 
-int Shader::loadFromFile(const std::string &vertexShaderFilename, const std::string &fragmenShaderFileName) {
+int Shader::loadFromFile(const std::string &vertexShaderFilename, const std::string &geometryShaderFilename, const std::string &fragmenShaderFilename) {
     unbind();
     glDeleteProgram(prog);
     prog = 0;
+    bool useGeom = geometryShaderFilename != "";
 
     vert = glCreateShader(GL_VERTEX_SHADER);
+    if (useGeom) geom = glCreateShader(GL_GEOMETRY_SHADER);
     frag = glCreateShader(GL_FRAGMENT_SHADER);
 
     std::string vertSrc = readFile(vertexShaderFilename);
-    std::string fragSrc = readFile(fragmenShaderFileName);
+    std::string geomSrc;
+    if (useGeom) std::string geomSrc = readFile(geometryShaderFilename);
+    std::string fragSrc = readFile(fragmenShaderFilename);
 
     compileShader(vert, vertSrc);
+    if (useGeom) compileShader(geom, geomSrc);
     compileShader(frag, fragSrc);
 
     prog = glCreateProgram();
     glAttachShader(prog, vert);
+    if (useGeom) glAttachShader(prog, geom);
     glAttachShader(prog, frag);
     glLinkProgram(prog);
 
@@ -78,6 +84,7 @@ int Shader::loadFromFile(const std::string &vertexShaderFilename, const std::str
     }
 
     glDeleteShader(vert);
+    if (useGeom) glDeleteShader(geom);
     glDeleteShader(frag);
 
     return result;
