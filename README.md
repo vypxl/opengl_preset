@@ -16,7 +16,7 @@ Build: `make build` (you will find the executable in out/sortviz)
 Run: `make run`
 Delete build files: `make clean`
 
-Built executable can be found in `out/sortviz` or run directly via `make run`.
+Built executable can be found in `out/glapp` or run directly via `make run`.
 
 ## How to build (Web / Emscripten)
 You will need `make`, `emscripten/emcc` and `glm` installed.
