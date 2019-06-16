@@ -12,7 +12,7 @@ to experiment with OpenGL stuff. It provides
 ## How to build (Linux)
 You will need `make`, `gcc/g++`, `freetype2`, `glew`, `glfw`, `glm` and `opengl` installed.
 
-Build: `make build` (you will find the executable in out/sortviz)
+Build: `make build`
 Run: `make run`
 Delete build files: `make clean`
 
