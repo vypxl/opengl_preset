@@ -56,7 +56,7 @@ public:
             return 1;
         }
 #ifndef __EMSCRIPTEN__
-        // Initialize glad
+        // Initialize glew
         if (glewInit() != GLEW_OK) {
             std::cerr << "Failed to initialize GLEW" << std::endl;
             return -1;
