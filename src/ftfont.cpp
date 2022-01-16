@@ -2,6 +2,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "freetype2/ft2build.h"
 #include "ftfont.hpp"
 
 FtFont::FtFont(std::string fontFilename, int size, int window_width, int window_height) {
