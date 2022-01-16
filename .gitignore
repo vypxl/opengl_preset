@@ -1,5 +1,6 @@
 out/
 .vscode/
-MakeFile
+Makefile
 CMakeFiles
 CMakeCache.txt
+

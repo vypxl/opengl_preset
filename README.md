@@ -10,15 +10,16 @@ to experiment with OpenGL stuff. It provides
 - a makefile, license, readme, gitignore and main.cpp file preset
 
 ## How to build (Linux)
-You will need `make`, `gcc/g++`, `freetype2`, `glew`, `glfw`, `glm` and `opengl` installed.
+You will need `cmake`, `make`, `gcc`, `freetype2`, `glew` and `sdl` installed.
 
-Build: `make build`
-Run: `make run`
+Prerequisite: `cmake .`
+Build: `make`
+Run: `out/glapp`
 Delete build files: `make clean`
 
-Built executable can be found in `out/glapp` or run directly via `make run`.
+Built executable can be found in `out/glapp`.
 
-## How to build (Web / Emscripten)
+## How to build (Web / Emscripten) CURRENTLY UNAVAILABLE
 You will need `make`, `emscripten/emcc` and `glm` installed.
 You may have to copy your system headers for `glm` into `<emscripten>/system/include`.
 
