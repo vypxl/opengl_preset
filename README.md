@@ -10,7 +10,7 @@ to experiment with OpenGL stuff. It provides
 - a makefile, license, readme, gitignore and main.cpp file preset
 
 ## How to build (Linux)
-You will need `cmake`, `make`, `gcc`, `freetype2`, `glew` and `sdl` installed.
+You will need `cmake`, `make`, `gcc`, `freetype2`, `glew`, `glm` and `sdl` installed.
 
 Prerequisite: `cmake .`
 Build: `make`
